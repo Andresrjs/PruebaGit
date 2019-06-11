@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <link rel="stylesheet" href="Data_files/bootstrap.css">
+            <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container">
+                <nav>
+                        <div>
+                          <div class="row my-2">
+                          <div class="col-sm-10">
+                            <img img="" src="Data_files/Gobierno-1.png" alt="Imagen-Principal">
+                          </div>
+                          <div class="col-sm-2">
+                              <p class="text-right pt-5"><i class="far fa-envelope float"></i><a href="mailto:"> info@tgif.net</a></p>
+                          </div>
+                        </div>
+                          <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Congress 113 </a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="SenateData.html">Senate</a>
+                                <a class="dropdown-item" href="HouseData.html">House</a>                          
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Attendance</a>
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+                                  <a class="dropdown-item" href="house-attendance.html">House</a>                          
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="senate-party-loyalty.html">Senate</a>
+                                  <a class="dropdown-item" href="house-party-loyalty.html">House</a>                          
+                                </div>
+                            </li>
+                          </ul>
+                        </div>
+                </nav>
+        <!--Table container-->
+        <div>
+             <div class="row my-2">
+              <div class="col-sm-6">
+            <h2>Party Loyalty</h2>
+            <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+             </div>
+             <div class="col-sm-6" class="float-right">
+            <h2>Senate at a glance</h2>
+            <table id="table1" class="table table-bordered" >
+            </table>
+</div>
+</div>
+            <hr>
+
+            <div class="row my-2">
+                <div class="col-sm-6">
+                    <h2>Least Loyal (Bottom 10% of Party)</h2>
+                    <table id="table4" class="table table-bordered">
+                    </table>
+                </div>
+                <div class="col-sm-6" class="float-right">
+                    <h2>Most Loyal (Top 10% of Party)</h2>
+                    <table id="table5" class="table table-bordered">
+                    </table>
+                </div>
+                <div class="border my-2">
+                    <p class="text-center">© 2016 TGIF | All Rights Reserved</p>
+                </div>
+                <script type="text/javascript" src="Data_files/senate-113.js"></script>
+                <script src="Estadisticas.js"></script>
+                <script src="Data_files/jquery-3.js"></script>
+                <script src="Data_files/popper.js"></script>
+                <script src="Data_files/bootstrap.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
