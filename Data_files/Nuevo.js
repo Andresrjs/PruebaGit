@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------------------------//
+/*//-----------------------------------------------------------------------------------------------//
 
 createSenateTable();
 
@@ -72,3 +72,25 @@ function miFiltro(arrayBruto) {
     return listaFiltrada
 }
 
+*/
+
+
+var url = "";
+if (document.title == "Senate starter page") {
+    url = 'https://api.propublica.org/congress/v1/113/senate/members.json'
+} else {
+    url = 'https://api.propublica.org/congress/v1/113/house/members.json'
+};
+
+onload = (function () {
+    fetch(url, {
+        method: 'GET',
+        headers: new Headers({
+            'X-API-Key': 'cWbop5wBqK2HIQRT1rgkM8VgkpuDI5vZsiPnHvRh',
+        })
+    })
+        .then((resp) => resp.json())
+        .then(data => {
+            vueF.miembrosVue = data.results[0].members;
+        }).catch(err => console.log(err))
+})
