@@ -48,8 +48,8 @@
             </div>
         </nav>
         <!--Table container-->
-        <div  class="container mt-2" >
-            <h2>{{cualq}}</h2>
+        <div class="container mt-2">
+            <h2>House</h2>
             <p>The major power of the House is to pass federal legislation that affects the entire country, although its
                 bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law
                 (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber).
@@ -62,17 +62,17 @@
                 <form action="#" id="filter" class="row">
                     <div class="col-8">
                         <label>Filter by Party:</label>
-                        <input type="checkbox" name="party-filter" value="R" @change = "mifiltro()" checked>
+                        <input type="checkbox" name="party-filter" value="R" @change="mifiltro()" checked>
                         Republican
-                        <input type="checkbox" name="party-filter" value="D" @change = "mifiltro()" checked>
+                        <input type="checkbox" name="party-filter" value="D" @change="mifiltro()" checked>
                         Democrat
-                        <input type="checkbox" name="party-filter" value="I" @change = "mifiltro()" checked>
+                        <input type="checkbox" name="party-filter" value="I" @change="mifiltro()" checked>
                         Independent
                     </div>
 
                     <div class="col-4">
                         <label for="select-states">Filter by State: </label>
-                        <select id="select-states" class="select-states" @change = "mifiltro()">
+                        <select id="select-states" class="select-states" @change="mifiltro()">
                             <option value="ALL">All</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -128,35 +128,35 @@
                         </select>
                     </div>
                 </form>
-            
-            <table class="table table-bordered" class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Party</th>
-                        <th>State</th>
-                        <th>Years in Office</th>
-                        <th>% Votes with Party</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="miembro of miembros">
-                        <td>{{miembro.first_name}} {{miembro.last_name}}</td>
-                        <td>{{miembro.party}}</td>
-                        <td>{{miembro.state}}</td>
-                        <td>{{miembro.seniority}}</td>
-                        <td>{{miembro.votes_with_party_pct}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+
+                <table class="table table-bordered" class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Party</th>
+                            <th>State</th>
+                            <th>Years in Office</th>
+                            <th>% Votes with Party</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="miembro of miembros">
+                            <td>{{miembro.first_name}} {{miembro.last_name}}</td>
+                            <td>{{miembro.party}}</td>
+                            <td>{{miembro.state}}</td>
+                            <td>{{miembro.seniority}}</td>
+                            <td>{{miembro.votes_with_party_pct}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="border my-2">
             <p class="text-center"> 2016 TGIF | All Rights Reserved</p>
-           <!--  <script type="text/javascript" src="Data_files/house-113.js"> </script> 
+            <!--  <script type="text/javascript" src="Data_files/house-113.js"> </script> 
             <script type="text/javascript" src="Data_files/Nuevo.js"></script> -->
             <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-            <script src="Data_files/VUE.js"> </script> 
+            <script src="Data_files/VUE.js"> </script>
             <script src="Data_files/jquery-3.js"></script>
             <script src="Data_files/popper.js"></script>
             <script src="Data_files/bootstrap.js"></script>
