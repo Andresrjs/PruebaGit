@@ -66,9 +66,9 @@
             electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may
             (if present) cast the tiebreaking vote.</p>
         </div>
-        <div class="col-sm-6" class="float-right">
+        <div id="house" class="col-sm-6" class="float-right">
           <h2>House at a glance</h2>
-          <table id="table1" class="table table-bordered">
+          <table  class="table table-bordered">
               <thead>
                   <tr>
                       <th>Party</th>
@@ -104,17 +104,45 @@
 
       <hr>
 
-      <div class="row my-2">
+      <div id="house" class="row my-2">
         <div class="col-sm-6">
           <h2>Least Engaged (Bottom 10% Attendance)</h2>
-          <table id="table2" class="table table-bordered">
+          <table id="least_engaged" class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Number of missed votes</th>
+                      <th>% Missed</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr v-for="miembro of least_engaged">
+                      <td><a> {{miembro.last_name}}, {{miembro.first_name}}
+                              {{miembro.middle_name}}</a></td>
+                      <td>{{miembro.missed_votes}}</td>
+                      <td>{{miembro.missed_votes_pct}} %</td>
+                  </tr>
+              </tbody>
           </table>
-
         </div>
         <div class="col-sm-6" class="float-right">
-
           <h2>Most Engaged (Top 10% Attendance)</h2>
-          <table id="table3" class="table table-bordered">
+          <table id="most_engaged" class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Number of missed votes</th>
+                      <th>% Missed</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr v-for="miembro of most_engaged">
+                      <td><a> {{miembro.last_name}}, {{miembro.first_name}}
+                              {{miembro.middle_name}}</a></td>
+                      <td>{{miembro.missed_votes}}</td>
+                      <td>{{miembro.missed_votes_pct}} %</td>
+                  </tr>
+              </tbody>
           </table>
         </div>
       </div>

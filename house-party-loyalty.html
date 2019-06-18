@@ -49,7 +49,8 @@
             </div>
         </nav>
         <!--Table container-->
-        <div>
+        <div id="app">
+            <section id="house" >
             <div class="row my-2">
                 <div class="col-sm-6">
                     <h2>Party Loyalty</h2>
@@ -57,36 +58,95 @@
                         respectively, tend to be the most faithful in voting for their party's nominee for office and
                         legislation that backs their party's agenda. </p>
                 </div>
-                <div class="col-sm-6" class="float-right">
+                <div  class="col-sm-6" class="float-right">
                     <h2>Senate at a glance</h2>
-                    <table id="table1" class="table table-bordered">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Party</th>
+                                <th>Number of reps</th>
+                                <th>% Voted with Party</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Democrat</td>
+                                <td>{{number_of_democrats}}</td>
+                                <td>{{democrats_average_votes_with_party}}</td>
+                            </tr>
+                            <tr>
+                                <td>Republican</td>
+                                <td>{{number_of_republicans}}</td>
+                                <td>{{republicans_average_votes_with_party}}</td>
+                            </tr>
+                            <tr v-show="independents_average_votes_with_party > 0">
+                                <td>Independent</td>
+                                <td>{{number_of_independents}}</td>
+                                <td>{{independents_average_votes_with_party}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>{{total}}</td>
+                                <td>{{total_average}}</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
-
             <hr>
-
             <div class="row my-2">
                 <div class="col-sm-6">
                     <h2>Least Loyal (Bottom 10% of Party)</h2>
-                    <table id="table4" class="table table-bordered">
+                    <table id="least_loyal" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Party votes</th>
+                                <th>% Party Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="miembro of least_loyal">
+                                <td><a> {{miembro.last_name}}, {{miembro.first_name}}
+                                        {{miembro.middle_name}}</a></td>
+                                <td>{{miembro.total_votes}}</td>
+                                <td>{{miembro.votes_with_party_pct}} %</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="col-sm-6" class="float-right">
                     <h2>Most Loyal (Top 10% of Party)</h2>
-                    <table id="table5" class="table table-bordered">
+                    <table id="most_loyal" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Party votes</th>
+                                <th>% Party Votes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="miembro of most_loyal">
+                                <td><a> {{miembro.last_name}}, {{miembro.first_name}}
+                                        {{miembro.middle_name}}</a></td>
+                                <td>{{miembro.total_votes}}</td>
+                                <td>{{miembro.votes_with_party_pct}} %</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="border my-2">
                     <p class="text-center">© 2016 TGIF | All Rights Reserved</p>
                 </div>
-                <script type="text/javascript" src="Data_files/house-113.js"></script>
-                <script src="Estadisticas.js"></script>
-                <script src="Data_files/jquery-3.js"></script>
-                <script src="Data_files/popper.js"></script>
-                <script src="Data_files/bootstrap.js"></script>
             </div>
+        </section>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <script src="Data_files/VUE.js"> </script>
+        <script src="Data_files/jquery-3.js"></script>
+        <script src="Data_files/popper.js"></script>
+        <script src="Data_files/bootstrap.js"></script>
+
     </div>
 </body>
 
